@@ -21,8 +21,11 @@
 @function icon-char($filename)
     $char: ""
 
-    @if $filename == icon-phone
+    @if $filename == phone
         $char: "\E001"
+    
+    @if $filename == services-2
+        $char: "\E002"
     
     @return $char
 
@@ -36,5 +39,7 @@
         
         content: icon-char($filename)
 
-.icon-icon-phone
-    +icon(icon-phone)
+.icon-phone
+    +icon(phone)
+.icon-services-2
+    +icon(services-2)
