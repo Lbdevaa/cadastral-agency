@@ -28,8 +28,7 @@
         &.active
             font-weight: 900
         &:hover
-            font-weight: 900
-        
+            font-weight: 900 
         &_footer
             margin-right: 16px
     &__url
@@ -63,7 +62,21 @@
     color: #ffffff
     max-width: 283px
     margin: 0
-
+.breadcrumbs
+    padding: 24px 0 44px
+    &__url
+        color: $dBlue
+        font-weight: 900
+        text-decoration: none
+    &__line
+        margin: 0 15px
+        color: $dBlue
+        font-weight: 900
+        display: inline-block
+    &__text
+        color: $dBlue
+        margin: 0
+        display: inline-block
 // main-page
 
 .main-btn
@@ -106,8 +119,7 @@
     font-weight: 900
     margin: 0
     padding: 0
-    text-align: left
-    margin-bottom: em(15px)
+    text-align: left 
     color: #333333
     text-transform: uppercase
 .advantages
@@ -117,6 +129,7 @@
         grid-row-gap: 35px 
     &__title 
         grid-column: 1/5
+        margin-bottom: em(15px)
     &__box
         // grid-column: 1/2
         text-align: center
@@ -135,6 +148,7 @@
         grid-column-gap: 20px
     &__title
         grid-column: 1/3 
+        margin-bottom: em(15px)
     &__head
         background: url(../img/services-main-page-1.png) no-repeat center
         padding: 0 0 0 em(35px) 
@@ -212,5 +226,21 @@
         font-weight: 500
         margin: 0 0 em(8px)
 
+    // about page
 
+.about-page
+    &__title
+        margin-bottom: em(15px)
+    &__advantages
+        grid-template-columns: repeat(6, 1fr)
+        margin-bottom: 20px
+.description
+    grid-template-columns: 1fr 1fr
+    grid-column-gap: 24px
+    &__text
+        max-width: 506px
+.description-about-page
+    margin-bottom: 70px
+.license
+    grid-template-columns: 1fr 1fr 1fr
 @import "media" // Всегда в конце
