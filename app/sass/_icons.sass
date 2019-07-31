@@ -21,11 +21,23 @@
 @function icon-char($filename)
     $char: ""
 
-    @if $filename == phone
+    @if $filename == clock
         $char: "\E001"
     
-    @if $filename == services-2
+    @if $filename == geo
         $char: "\E002"
+    
+    @if $filename == mail
+        $char: "\E003"
+    
+    @if $filename == phone
+        $char: "\E004"
+    
+    @if $filename == services-1
+        $char: "\E005"
+    
+    @if $filename == services-2
+        $char: "\E006"
     
     @return $char
 
@@ -39,7 +51,15 @@
         
         content: icon-char($filename)
 
+.icon-clock
+    +icon(clock)
+.icon-geo
+    +icon(geo)
+.icon-mail
+    +icon(mail)
 .icon-phone
     +icon(phone)
+.icon-services-1
+    +icon(services-1)
 .icon-services-2
     +icon(services-2)

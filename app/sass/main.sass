@@ -20,7 +20,7 @@
     margin: 0
     padding: 0    
     justify-self: center
-    &_footer
+    &_just-start
         justify-self: start
     &__item
         display: inline-block 
@@ -29,7 +29,7 @@
             font-weight: 900
         &:hover
             font-weight: 900 
-        &_footer
+        &_margin
             margin-right: 16px
     &__url
         color: #ffffff
@@ -49,23 +49,23 @@
         float: right
 .footer
     padding: em(50px) 0 em(80px)    
-    background-color: $dBlue 
-    
-    &__logo
-        margin-bottom: 27px
-    .container
+    background-color: $dBlue   
+    >div
         grid-column-gap: 40px
         grid-template-columns: max-content 1fr max-content max-content
+    &__info-logo
+        margin-bottom: 27px
+        max-width: 263px
+    &__info-text 
+        font-size: em(14px)
+        font-weight: 500
+        color: #ffffff
+        max-width: 283px
+        margin: 0
 .footer-phone
     margin: 0
     color: #fff
-.info__text
-    // grid-column: 1/2
-    font-size: em(14px)
-    font-weight: 500
-    color: #ffffff
-    max-width: 283px
-    margin: 0
+
 .breadcrumbs
     padding: 24px 0 44px
     &__url
@@ -95,11 +95,12 @@
     align-self: center
 .main-carousel 
     padding-top: 40px
+    margin-bottom: 40px
     &__bg
         background-image: url(../img/main-page-carousel-1.png)
         background-repeat: no-repeat
         background-position: center 
-        padding: em(140px) 0 em(50px)  
+        padding: em(150px) 0  
         text-align: center
     &__title
         color: #ffffff
@@ -110,16 +111,36 @@
     .owl-prev, .owl-next
         position: absolute
         top: 0
-        height: 100%
-        color: #ffffff
+        height: 100% 
     .owl-prev
-        left: 18%
+        left: 20%
     .owl-next
-        right: 18%
-    .owl-item
-        height: 80%
-    .owl-item.active
-        height: 100%
+        right: 20%
+    .owl-dots
+        position: absolute
+        bottom: 50px
+        left: 50%
+        text-align: center
+        transform: translateX(-50%)
+        .owl-dot
+            outline: none
+    .owl-dot.active span, .main-carousel .owl-dot:hover span
+        background-color: $green
+        width: 24px
+        height: 24px 
+        transform: translateY(10%) 
+    .owl-dot:focus span, .owl-dot:active span 
+        border: solid 2px $green 
+    .owl-dot span 
+        display: block  
+        transition: opacity .2s ease
+        width: 18px
+        height: 18px
+        background-color: #fff
+        margin: 0 10px  
+        &:hover
+            border: solid 2px $green
+        
 
 .section-title
     font-size: rem(48px)
@@ -132,7 +153,7 @@
     margin-bottom: em(15px)
 .advantages
     margin-bottom: em(70px)
-    .container
+    >div
         grid-template-columns: repeat(4, 1fr)  
         grid-row-gap: 35px 
     &__title 
@@ -151,14 +172,20 @@
         margin-bottom: 25px
 .services-section
     margin-bottom: 90px
-    .container
+    >div
         grid-template-columns: 1fr 1fr
         grid-column-gap: 20px
     &__title
         grid-column: 1/3 
-        margin-bottom: em(15px)
+        margin-bottom: em(15px) 
+    
+
+.services-box
+    box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.25)
+    border-radius: 10px
     &__head
         background: url(../img/services-main-page-1.png) no-repeat center
+        background-size: cover
         padding: 0 0 0 em(35px) 
         height: 120px
         border-radius: 10px
@@ -167,14 +194,10 @@
         align-items: center
         &:nth-of-type(2)
             background: url(../img/services-main-page-2.png) 
-.icon-services-2
-    color: #ffffff
-    font-size: 35px
-    margin-right: em(12px)
-
-.services-box
-    box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.25)
-    border-radius: 10px
+    &__head-icon
+        color: #ffffff
+        font-size: 35px
+        margin-right: em(12px)
     &__title
         color: #ffffff
         font-weight: 900
@@ -188,15 +211,19 @@
         color: $dBlue 
     &__item
         list-style-type: none 
-        max-width: 300px
+        max-width: 320px
         margin-bottom: em(22px)
+        padding-left: em(20px)
+        position: relative
         &:before
             content: "■"
             color: $green 
             padding-right: em(14px)
             text-decoration: none 
-.news 
-    .container
+            position: absolute
+            left: 0
+.news-section
+    >div
         grid-template-columns: repeat(6, 1fr)
         grid-column-gap: 50px
     &__title
@@ -205,11 +232,13 @@
     grid-column: 3 span
     grid-column-gap: 20px
     grid-row-gap: 35px
-    &__box-img
+    &__bg
         grid-column: 1/2
         grid-row: 1/3
         width: 183px
         height: 183px
+        background: url('../img/news-main-page-1.png') no-repeat center center
+        background-size: cover
     &__img
         object-fit: cover
         width: 100%
@@ -270,8 +299,46 @@
 .contacts
     &__map
         height: 729px
-    &__map-frame
-        border: none
+        margin-bottom: 58px
+        position: relative
+     
+.contacts-map-info
+    position: absolute
+    top: 100px
+    right: 100px
+    background-color: #fff
+    padding: em(40px)
+    width: 487px
+    height: 530px 
+    box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.25)
+    border-radius: 4px
+    &__title
+        font-size: em(36px)
+        color: $dark
+        max-width: 300px
+        padding-left: em(15px)
+        margin: 0 0 50px
+        line-height: 1
+
+    &__box
+        grid-template-columns: max-content 1fr
+        grid-column-gap: 14px
+        grid-row-gap: 36px
+        align-items: center
+    &__text-box
+
+    &__icon
+        font-size: 24px
+        color: $green
+    &__text, &__text_bold
+        text-decoration: none
+        color: $dBlue
+        margin: 0
+        &_bold
+            font-weight: 900
+             
+    
+
 
     // services page
 .services-page
@@ -296,7 +363,7 @@
     
     // news
 .news
-    .container
+     
     &__large
         margin-bottom: 24px
 .large-news

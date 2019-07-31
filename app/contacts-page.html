@@ -20,26 +20,26 @@
 </head>
 
 <body>
-	<header class="header">
-		<div class="container grid">
-			<a href="#" class="header__logo-box">
-				<img src="img/logo.svg" alt="#" class="header__logo img-responsive">
-			</a>
-			<ul class="nav">
-				<li class="nav__item "><a href="#" class="nav__url">О компании</a></li>
-				<li class="nav__item active"><a href="#" class="nav__url">Контакты</a></li>
-				<li class="nav__item"><a href="#" class="nav__url">Услуги</a></li>
-				<li class="nav__item"><a href="#" class="nav__url">Новости</a></li>
-			</ul>
-			<div class="header-phone-box">
-			<p class="header-phone">
-				<i class="icon-phone header-icon"></i>
-				+7 (343) 000-00-00  
-			</p>
-			<a href="#" class="header-phone__order">Заказать звонок</a>
-			</div> 
-		</div>
-	</header>
+    <header class="header">
+                <div class="container grid">
+                    <a href="#" class="header__logo-box">
+                        <img src="img/logo.svg" alt="#" class="header__logo img-responsive">
+                    </a>
+                    <ul class="main-menu">
+                        <li class="main-menu__item"><a href="#" class="main-menu__url">О компании</a></li>
+                        <li class="main-menu__item"><a href="#" class="main-menu__url">Контакты</a></li>
+                        <li class="main-menu__item"><a href="#" class="main-menu__url">Услуги</a></li>
+                        <li class="main-menu__item"><a href="#" class="main-menu__url">Новости</a></li>
+                    </ul>
+                    <div class="phone-box">
+                        <p class="phone-box__text">
+                            <i class="icon-phone phone-box__icon"></i>
+                        +7 (343) 000-00-00  
+                    </p>
+                    <a href="#" class="phone-box__order">Заказать звонок</a>
+                    </div> 
+                </div>
+    </header>
      
     <section class="breadcrumbs">
             <div class="container">
@@ -53,7 +53,32 @@
         <div class="container">
             <h2 class="section-title services__title">Контакты</h2>
             <div class="contacts__map">
-                <iframe class="contacts__map-frame" src="https://yandex.ru/map-widget/v1/-/CGUC6WI1" width="100%" height="100%" frameborder="1" allowfullscreen="true"></iframe>
+                <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A353b30a0a1a3c433b76158553383fa82cc17369e2b4dc785ae2ec083c2043d32&amp;width=100%&amp;height=100%&amp;lang=ru_RU&amp;scroll=true"></script>     
+                <div class="contacts-map-info">
+                    <h2 class="contacts-map-info__title">Контактная информация</h2>
+                    <div class="contacts-map-info__box grid">
+                        <i class="icon-phone contacts-map-info__icon"></i>
+                        <div class="contacts-map-info__text-box">
+                            <p class="contacts-map-info__text"> <span class="contacts-map-info__text_bold">+7 (343) 000-00-00</span> (Отдел геодезии)</p>
+                            <p class="contacts-map-info__text"><span class="contacts-map-info__text_bold">+7 (343) 000-00-00</span> (Отдел геодезии)</p>
+                        </div>
+                        <i class="icon-mail contacts-map-info__icon"></i>
+                        <div class="contacts-map-info__text-box">
+                            <p class="contacts-map-info__text_bold">info@ka-zvezd.ru</p>
+                            <p class="contacts-map-info__text_bold">ka-zvezd@list.ru</p>
+                        </div>
+                        <i class="icon-geo contacts-map-info__icon"></i>
+                        <div class="contacts-map-info__text-box">
+                            <p class="contacts-map-info__text"><span class="contacts-map-info__text_bold">Екатеринбург</span>, ул. Такая-то 1/1 корпус «з», оф. 000</p>
+                        </div>
+                        <i class="icon-clock contacts-map-info__icon"></i>
+                        <div class="contacts-map-info__text-box">
+                            <p class="contacts-map-info__text">Пн-Пт: 10:00 - 18:00</p>
+                            <p class="contacts-map-info__text">Обед: 13:00 - 14:00</p>
+                        </div>
+ 
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -61,27 +86,27 @@
 
 
     <footer class="footer">	
-        <div class="container grid">
-            <div class="info">
-                <img src="img/logo.svg" alt="" class="header__logo footer__logo">
-                <p class="info__text">© ООО «Кадастровое Агенство Звездиных» — 2019 г.</p>
+            <div class="container grid">
+                <div class="footer__info">
+                    <img src="img/logo.svg" alt="" class="footer__info-logo img-responsive">
+                    <p class="footer__info-text">© ООО «Кадастровое Агенство Звездиных» — 2019 г.</p>
+                </div>
+                <ul class="main-menu main-menu_just-start">
+                        <li class="main-menu__item main-menu__item_margin"><a href="#" class="main-menu__url">О компании</a></li>
+                        <li class="main-menu__item main-menu__item_margin"><a href="#" class="main-menu__url">Контакты</a></li>
+                        <li class="main-menu__item main-menu__item_margin"><a href="#" class="main-menu__url">Услуги</a></li>
+                        <li class="main-menu__item main-menu__item_margin"><a href="#" class="main-menu__url">Новости</a></li>
+                </ul>
+                <p class="footer-phone">
+                        <i class="icon-phone header-icon"></i>
+                        +7 (343) 000-00-00 
+                </p>
+                <div class="footer-links">
+                    <a href="#" class="footer-links__url"><img src="img/footer-links-img-inst.svg" alt="" class="footer-links__img"></a> 
+                    <a href="#" class="footer-links__url"><img src="img/footer-links-img-vk.svg" alt="" class="footer-links__img"></a> 
+                </div>
             </div>
-            <ul class="nav nav_footer">
-                    <li class="nav__item nav__item_footer"><a href="#" class="nav__url">О компании</a></li>
-                    <li class="nav__item nav__item_footer"><a href="#" class="nav__url">Контакты</a></li>
-                    <li class="nav__item nav__item_footer"><a href="#" class="nav__url">Услуги</a></li>
-                    <li class="nav__item nav__item_footer"><a href="#" class="nav__url">Новости</a></li>
-            </ul>
-            <p class="footer-phone">
-                    <i class="icon-phone header-icon"></i>
-                    +7 (343) 000-00-00 
-            </p>
-            <div class="footer-links">
-                <a href="#" class="footer-links__url"><img src="img/footer-links-img-inst.svg" alt="" class="footer-links__img"></a> 
-                <a href="#" class="footer-links__url"><img src="img/footer-links-img-vk.svg" alt="" class="footer-links__img"></a> 
-            </div>
-        </div>
-    </footer>
+        </footer>
     <script src="js/scripts.min.js"></script> 
 </body>
 </html>
