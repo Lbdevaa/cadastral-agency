@@ -12,7 +12,7 @@
     padding: 23px 0 23px
     &__logo
         max-width: 263px
-    .container
+    >div
         grid-template-columns: max-content 1fr max-content
         align-items: center
 .main-menu
@@ -150,7 +150,7 @@
     text-align: left 
     color: $dark
     text-transform: uppercase
-    margin-bottom: em(15px)
+    margin-bottom: em(13px)
 .advantages
     margin-bottom: em(70px)
     >div
@@ -192,8 +192,9 @@
         display: grid
         grid-template-columns: max-content 1fr
         align-items: center
-        &:nth-of-type(2)
-            background: url(../img/services-main-page-2.png) 
+    &:nth-child(2) .services-box__head
+            background: url(../img/services-main-page-2.png) no-repeat center 
+            background-size: cover
     &__head-icon
         color: #ffffff
         font-size: 35px
@@ -246,7 +247,7 @@
     &__box-text
         grid-column: 2/3
     &__title
-        margin: 0 0 em(8px)
+        margin: 0 0 em(5px)
         padding: 0
         color: $dBlue    
         font-size: rem(18px)
@@ -257,11 +258,12 @@
         color: $dark
         font-size: rem(14px)
         font-weight: 500
+        max-width: 354px
     &__date
         font-size: rem(14px)
         color: #999999
         font-weight: 500
-        margin: 0 0 em(8px)
+        margin: 0 0 em(13px)
 
     // about page
 
@@ -279,9 +281,11 @@
     &__text
         max-width: 506px
         margin: 0
+        &_margin-bot
+            margin-bottom: em(20px)
         &_service
             width: auto
-            grid-column: 1/4
+            grid-column: 1/4 
     &__price
         grid-column: 2/3
         text-align: right
@@ -289,12 +293,22 @@
         font-weight: 900
         font-size: em(21px)
         color: $dark
-
+.about-page-license
+    margin-bottom: 54px
+.description-img
+    object-fit: cover
 .description-about-page
     margin-bottom: 70px
 .license
     grid-template-columns: 1fr 1fr 1fr
-
+    grid-column-gap: 20px
+    
+    &__url
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25) 
+    &__img
+        height: 100%
+        width: 100%
+        object-fit: cover
     //contacts page
 .contacts
     &__map
@@ -340,8 +354,8 @@
     
 
 
-    // services page
-.services-page
+    // services and services-page
+.services
     &__text
         margin: 0 0 em(35px) 
     &__items
@@ -356,16 +370,24 @@
         color: $green
         font-size: rem(14px)
         margin-bottom: em(85px)
-
-    //service
-.service-btn
+.services-page__items
+    margin-bottom: 75px
+.description-services-page
+    margin-bottom: 45px
+.services-page-btn
     text-transform: uppercase 
     
     // news
 .news
-     
-    &__large
-        margin-bottom: 24px
+    >div
+        grid-column-gap: 50px
+        grid-template-columns: repeat(6, 1fr)
+    &__title
+        grid-column: 1/7
+.news-large
+    margin-bottom: 24px
+.news-large-date
+    margin-bottom: em(10px)
 .large-news
     background: url(../img/news-large.png) center center
     object-fit: cover
@@ -374,10 +396,11 @@
     color: #ffffff
     position: relative
     padding-left: em(38px)
+    grid-column: 1/7
     &__date
         font-size: em(16px)
         font-weight: 500
-        margin: 0
+        margin-top: 0
         position: absolute
         bottom: 140px
     &__title
@@ -388,4 +411,52 @@
         bottom: 50px
         max-width: 700px
         text-transform: uppercase
+  
+.big-news-box
+    grid-template-columns: 1fr 1fr 1fr
+    grid-column-gap: 22px
+    grid-column: 1/7
+.big-news
+    &__img
+        margin-bottom: 10px
+    &__date
+        margin: 0 0 em(10px)
+        font-size: em(12.5px)
+        color: $grey
+    &__title
+        color: $dBlue
+        margin: 0 0 em(5px)
+    &__text
+        margin: 0
+.news-big-news-box
+    margin-bottom: em(82px)
+.news-average-box
+    grid-column: 1/4
+    margin-bottom: em(90px)
+.small-news-box
+    grid-column: 4/7
+    grid-row-gap: 10px
+    margin-bottom: em(90px)
+.small-news
+    border-bottom: 1px solid $lBlue
+    margin-bottom: 10px
+    &__date
+        font-size: em(12px)
+        color: $grey
+        font-weight: 500
+        margin: 10px 0 em(16px)
+        &:first-child
+            margin-top: 0
+    &__title
+        margin: 0 0 em(12px)
+        padding: 0
+        color: #054982
+        font-size: em(16px)
+        font-weight: 900
+        text-transform: uppercase
+    &__text
+        font-size: em(12px)
+        color: $dark
+        font-weight: 500
+        margin: 0 0 em(30px)
 @import "media" // Всегда в конце
