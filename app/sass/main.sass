@@ -2,7 +2,7 @@
 @import "libs"
 @import "vars"
 @import "base"
-@import "icons"
+@import "icons" 
 
 // Пользовательские стили
 
@@ -93,29 +93,46 @@
     border: 1px solid $green
     font-weight: 900
     align-self: center
+    opacity: 0
 .main-carousel 
     padding-top: 40px
     margin-bottom: 40px
     &__bg
-        background-image: url(../img/main-page-carousel-1.png)
-        background-repeat: no-repeat
-        background-position: center 
+        background: url(../img/main-page-carousel-1.png) no-repeat center
+        background-size: cover 
         padding: em(150px) 0  
         text-align: center
+    .owl-item .main-carousel__bg
+        box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25)
+    .owl-item.active .main-carousel__bg
+        box-shadow: inset 500px 600px 200px rgba(0, 0, 0, 0.4)
+    .owl-item:nth-of-type(5) .main-carousel__bg
+        background: url(../img/main-page-carousel-2.png) no-repeat center
+        background-size: cover
+    .owl-item:nth-of-type(7) .main-carousel__bg
+        background: url(../img/main-page-carousel-3.png) no-repeat center
+        background-size: cover
+    .owl-item.active .main-carousel__title, .owl-item.active .main-btn
+        opacity: 1 
     &__title
         color: #ffffff
         font-size: em(48px)
         font-weight: 900
         margin: 0 auto em(30px) auto
         max-width: 900px
+        opacity: 0
     .owl-prev, .owl-next
         position: absolute
         top: 0
         height: 100% 
     .owl-prev
-        left: 20%
+        left: 22vw
+        outline: none
+        &:hover img
+            // border: solid 2px #ffffff
     .owl-next
-        right: 20%
+        right: 22vw
+        outline: none
     .owl-dots
         position: absolute
         bottom: 50px
@@ -240,6 +257,9 @@
         height: 183px
         background: url('../img/news-main-page-1.png') no-repeat center center
         background-size: cover
+    &:nth-of-type(even) .news-average__bg
+        background: url('../img/news-main-page-2.png') no-repeat center center
+
     &__img
         object-fit: cover
         width: 100%
@@ -465,12 +485,22 @@
 
     &__title
         margin-bottom: em(7px)
+        grid-column: 1/7
     &__date
         margin: 0
         font-size: em(12px)
         font-weight: 500
         color: $grey
         margin-bottom: em(60px)
+    &__same-news
+        grid-template-columns: repeat(6, 1fr)
+        margin-bottom: 150px
+.page-article 
+    &__text
+        font-weight: 500
+        margin: 0 0 em(22px)
+.news-page-article
+    margin-bottom: em(110px)
 
 .news-page-img
     background: url(../img/news-page-img.png) no-repeat center

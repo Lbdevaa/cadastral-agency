@@ -8,10 +8,19 @@ $(function() {
 			touchDrag: false,
 			dots: true,
 			mouseDrag: false, 
-			margin: 40,
-			stagePadding: 360,
+			
 			loop: true,
 			navText: ['<img src="../img/left-arrow.svg">','<img src="../img/right-arrow.svg">'],
+			responsive:{
+				0:{
+					stagePadding: 	260,
+					margin: 20, 
+				},
+				1367:{
+					stagePadding: 360,
+					margin: 40, 
+				}
+			}
 		}); 
 
 	// open gallery
@@ -46,46 +55,23 @@ $(function() {
 	function callback(event) {
 		$('.whats .numOf').html('0' + (event.item.count));
 	} 
-
-// 	$('.main-carousel').on('translated.owl.carousel', function(event) {
-// 		$('.owl-item.active').each(function(index){
-// 			if(index == 0 || index == 2){ 
-// 			} else if(index == 1){
-// 				$(this).find('.main-carousel__bg').css({'height': '620px', 'margin-top': '10px'});
-// 			}
-// 		});
-// 		if((event.item.index - 2) == 0){
-// 			$('.whats #num_123456').html('0' + (event.item.count));	
-// 		} else {
-// 			$('.whats #num_123456').html('0' + (event.item.index - 2));	
-// 		};	 
-// 	});
-// // перескок
-// 	$('.main-carousel').on('drag.owl.carousel', function(event) {
-// 		$('.owl-item').each(function(index){
-// 			$(this).find('.main-carousel__bg').css({'height': '540px', 'margin-top': '30px'});
-// 		});		
-// 	});
-// // переход по стрелке - высота всех блоков
-// 	$('.main-carousel').on('translate.owl.carousel', function(event) {
-// 		$('.owl-item').each(function(index){
-// 			$(this).find('.main-carousel__bg').css({'height': '620px', 'margin-top': '30px'});
-// 		});	
-// 		// console.log(10)
-// 	});
-// активный элемент
-
+ 
 	if(document.querySelector('.main-carousel__bg')){
 	function setMainOwlHeight() {
 		var owlSlideItem = document.querySelectorAll('.main-carousel__bg');
-		for(var i = 0; i < owlSlideItem.length; i++){
-			owlSlideItem[i].style.height = 500 + 'px';
-			owlSlideItem[i].style.margin = "50px 0 0 0";
-			// owlSlideItem[i].style.boxShadow = "inset 0px 4px 4px rgba(0, 0, 0, 0.25)";
+		var slideHeight = 500;
+		var activeSlideHeight = 640;
+		if (window.innerWidth < 1400) {
+			slideHeight = 450
+			activeSlideHeight = 580
 		}
-		// console.log(document.querySelector('.owl-item.active'));
+
+		for(var i = 0; i < owlSlideItem.length; i++){
+			owlSlideItem[i].style.height = slideHeight + 'px';
+			owlSlideItem[i].style.margin = "50px 0 0 0"; 
+		} 
 		var activeOwlSlideItem = document.querySelector('.owl-item.active .main-carousel__bg');
-		activeOwlSlideItem.style.height = 640 + 'px';
+		activeOwlSlideItem.style.height = activeSlideHeight + 'px';
 		activeOwlSlideItem.style.margin = 0;
 	};setMainOwlHeight();
 
