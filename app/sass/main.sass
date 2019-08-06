@@ -6,7 +6,31 @@
 
 // Пользовательские стили
 
-
+.pattern
+    ::before
+        content: ''
+        position: absolute
+        width: 360px
+        height: 100%
+        left: 0
+        top: 90vh
+        z-index: -2
+        background-image: url(../img/pattern.svg)
+        background-size: 700px 350px
+        background-repeat: repeat
+        background-position: 0 0
+    ::after
+        content: ''
+        position: absolute
+        width: 360px
+        height: 100%
+        right: 0
+        top: 90vh
+        z-index: -2
+        background-image: url(../img/pattern.svg)
+        background-size: 700px 350px
+        background-repeat: repeat
+        background-position: 0 0
 .header
     background-color: $dBlue
     padding: 23px 0 23px
@@ -93,7 +117,8 @@
     border: 1px solid $green
     font-weight: 900
     align-self: center
-    opacity: 0
+    // opacity: 0
+    transition: 1s
 .main-carousel 
     padding-top: 40px
     margin-bottom: 40px
@@ -114,6 +139,7 @@
         background-size: cover
     .owl-item.active .main-carousel__title, .owl-item.active .main-btn
         opacity: 1 
+        transition: 1s
     &__title
         color: #ffffff
         font-size: em(48px)
@@ -121,6 +147,7 @@
         margin: 0 auto em(30px) auto
         max-width: 900px
         opacity: 0
+        transition: 1s
     .owl-prev, .owl-next
         position: absolute
         top: 0
@@ -200,6 +227,8 @@
 .services-box
     box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.25)
     border-radius: 10px
+    &__url
+        text-decoration: none
     &__head
         background: url(../img/services-main-page-1.png) no-repeat center
         background-size: cover
@@ -273,6 +302,9 @@
         font-size: rem(18px)
         font-weight: 900 
         text-transform: uppercase 
+        text-decoration: none
+        margin-bottom: em(8px)
+        display: block
     &__text
         margin: 0
         color: $dark
