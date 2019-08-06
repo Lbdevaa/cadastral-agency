@@ -117,7 +117,8 @@
     border: 1px solid $green
     font-weight: 900
     align-self: center
-    // opacity: 0
+.main-btn_display
+    opacity: 0
     transition: 1s
 .main-carousel 
     padding-top: 40px
@@ -128,6 +129,7 @@
         background-size: cover 
         padding: em(150px) 0  
         text-align: center
+        transition: all 0.5s ease
     .owl-item .main-carousel__bg
         box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25)
     .owl-item.active .main-carousel__bg
@@ -138,7 +140,7 @@
     .owl-item:nth-of-type(7) .main-carousel__bg
         background: url(../img/main-page-carousel-3.png) no-repeat center
         background-size: cover
-    .owl-item.active .main-carousel__title, .owl-item.active .main-btn
+    .owl-item.active .main-carousel__title, .owl-item.active .main-btn_display
         opacity: 1 
         transition: 1s
     &__title
