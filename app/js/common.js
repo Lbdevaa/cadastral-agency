@@ -23,7 +23,7 @@ $(function() {
 			}
 		}); 
 
-	// open gallery
+	// open gallery and slide
  
 	$('.popup-gallery').magnificPopup({
 		type: 'image',
@@ -66,4 +66,12 @@ $(function() {
 
 	$('.main-carousel').on('translated.owl.carousel', setMainOwlHeight);
 	}
+
+	// open popup call
+	
+	$('.open-popup').magnificPopup({
+		type:'inline',
+		midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+	});
+
 });

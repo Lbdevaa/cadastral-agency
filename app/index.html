@@ -2,24 +2,28 @@
 <html lang="ru">
 
 <head>
-
 	<meta charset="utf-8">
-
 	<title>Кадастровое Агенство Звездиных</title>
 	<meta name="description" content="">
 	<meta name="keywords" content="">
-
 	<meta property="og:image" content="path/to/image.jpg">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link rel="apple-touch-icon" sizes="192x192" href="img/favicon.png">
 	<link rel="icon" type="image/png" sizes="192x192" href="img/favicon.png">  
-
 	<style>body { opacity: 0; overflow-x: hidden; } html { background-color: #fff; }</style>
 	<link rel="stylesheet" href="css/main.min.css">
 
 </head>
 
 <body>
+	<form id="order-form" class="white-popup">
+		<p class="white-popup__title">Оставить заявку</p>
+		<input type="text" class="white-popup__input" placeholder="Имя">
+		<input type="text" class="white-popup__input" placeholder="Телефон">
+		<button class="white-popup__btn blue-btn">Оставить заявку</button>
+		<p class="white-popup__description">Нажимая на кнопку, я соглашаюсь с <a href="#" class="white-popup__url">политикой обработки</a> своих персональных данных.</p>
+	<button title="Close (Esc)" type="button" class="mfp-close">×</button></form>
+
 	<header class="header">
 		<div class="container grid">
 			<a href="/" class="header__logo-box">
@@ -36,7 +40,7 @@
 					<i class="icon-phone phone-box__icon"></i>
 				+7 (343) 000-00-00  
 			</p>
-			<a href="#" class="phone-box__order">Заказать звонок</a>
+			<a href="#order-form" class="phone-box__order open-popup">Заказать звонок</a>
 			</div> 
 		</div>
 	</header>
